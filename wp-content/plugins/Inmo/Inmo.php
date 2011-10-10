@@ -7,6 +7,7 @@ Version: 1.0
 Author URI: http://www.jldesign.com.mx/
 */
 
+
 require_once( 'Libraries/db.php' );
 require_once( 'Libraries/Inmo.php' );
 require_once( 'Libraries/Product.php' );
