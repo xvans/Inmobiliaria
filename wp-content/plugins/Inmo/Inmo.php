@@ -15,8 +15,8 @@ require_once( 'Libraries/Product_Casa.php' );
 $mysql = array();
 
 $mysql['sql_server'] 					= 'localhost';
-$mysql['sql_username'] 					= 'xvans';
-$mysql['sql_password'] 					= '@miguell';
+$mysql['sql_username'] 					= 'root';
+$mysql['sql_password'] 					= '';
 $mysql['sql_db'] 						= 'wp';
 
 $db 	= new db( $mysql, false, true );
