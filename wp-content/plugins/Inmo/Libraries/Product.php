@@ -18,7 +18,15 @@ class Product {
             
         } else {
             
-            $this->_data[$key] = $value;
+            if ( is_array( $value ) ) {
+            	
+            	for ( $i = 0; $i < count( $this->fields ); $i++ ) {
+            		
+            		$this->_data[$this->fields[$i]] = $value[$this->fields[$i]];
+            		
+            	}
+            	
+            }
             
         }
         

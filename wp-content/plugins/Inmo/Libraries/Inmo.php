@@ -64,6 +64,10 @@ class Inmo {
 			
 		}
 		
+		$sql_order .= '
+			ORDER BY ' . 'P.product_id' . ' ' . $this->order . '
+			';
+		
 		$sql = '
 			SELECT *
 			FROM inmo_product P, inmo_product_attr P_ATTR, inmo_product_type P_TYPE, inmo_product_oper P_OPER
@@ -71,6 +75,7 @@ class Inmo {
 				AND P_TYPE.type_id = P.product_type
 				AND P_OPER.oper_id = P.product_oper
 				' . $sql_extend . '
+				' . $sql_order . '
 			';
 		
 		echo $sql;
@@ -109,7 +114,7 @@ class Inmo {
 		
 		switch ( $data['product_type'] ) {
 			case self::PRODUCT_CASA:
-				$obj = new Product_Casa();
+				$obj = new Product_Casa( $data['product_id'] );
 				$obj->product = $data;
 				return $obj;
 			break;
